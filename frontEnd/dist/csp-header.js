@@ -1,0 +1,1 @@
+document.head.appendChild(Object.assign(document.createElement('meta'), {httpEquiv: 'Content-Security-Policy', content: 'script-src self https://accounts.google.com'}));

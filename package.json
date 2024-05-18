@@ -1,0 +1,14 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "NOTE : Make sure to have .env file in backend with below value set MONGO_CONNECTION_STRING=\"your_connection_string\"",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "scripts": {
+    "start": "cd backend && npm install && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

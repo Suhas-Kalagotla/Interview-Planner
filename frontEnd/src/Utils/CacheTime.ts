@@ -1,0 +1,17 @@
+// * THIS FILE CONTAINS DATA STALE TIME FOR FRONTEND API CALLS FROM USE QUERY
+
+export const CONTEST_PROBLEM_LIST_STALE_TIME = 1800000
+export const CONTEST_PROBLEM_USER_CODE_STALE_TIME = 1800000
+export const CONTEST_OVERVIEW_STALE_TIME = 1800000
+export const CONTEST_RANK_STALE_TIME = 300000
+export const CONTEST_SUBMISSION_STALE_TIME = 10000
+export const CONTEST_COPY_PASTE_STATUS_STALE_TIME = 10800000
+export const CONTEST_HOME_PAGE_STALE_TIME = 300000
+export const CONTEST_CONFIG_STALE_TIME = 10800000 //3 HOURS
+export const PROBLEM_TAGS_STALE_TIME = 3600000 //1 HOUR
+export const EDITORIAL_VISIBILITY_STALE_TIME = 0 * 60 * 1000  // show editorial after 15 mins of contest end time - This is hardcoded here based on disscussion(PR: #1141), we will change it in future based on requirements
+export const MCQ_STALE_TIME = 600000 // 10 mins
+export const USER_COURSES_STALE_TIME = 3600000 //1 HOUR
+export const USER_COURSES_CACHE_TIME = 3600000 //1 HOUR
+export const REDIRECT_WAIT_SECONDS = 10
+
