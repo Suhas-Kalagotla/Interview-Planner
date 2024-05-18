@@ -27,7 +27,7 @@ const uploadDataPlagiarism = async (data: any) => {
     return await service.post('/api/plagiarism/run', data);
 };
 
-const UploadDoc = () => {
+const UploadProblem = () => {
     const [jsonData, setJsonData] = useState<any[] | null>(null);
     const [responseData, setResponseData] = useState(null);
     const [language, setLanguage] = useState<any>(SUPPORTED_LANGUAGES[0]);
@@ -179,4 +179,4 @@ const UploadDoc = () => {
     );
 };
 
-export default UploadDoc;
+export default UploadProblem;

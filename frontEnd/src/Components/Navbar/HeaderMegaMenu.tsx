@@ -85,12 +85,12 @@ export function HeaderMegaMenu() {
 
                     {isAuth && (
                         <Group h="100%" gap={0} visibleFrom="sm">
-                            <a href="/upload/doc" className={classes.link}>
-                                Upload-Run
+                            <a href="/upload/problem" className={classes.link}>
+                                Upload-Problem
                                 <IconUpload />
                             </a>
-                            <a href="/my/report" className={classes.link}>
-                                My Report
+                            <a href="/my/plan" className={classes.link}>
+                                My Plan
                                 <IconReportAnalytics/>
                             </a>
                             <HoverCard
@@ -180,11 +180,11 @@ export function HeaderMegaMenu() {
                     <a href="#" className={classes.link}>
                         Home
                     </a>
-                    <a href="/upload/doc" className={classes.link}>
-                        Upload-Run
+                    <a href="/upload/problem" className={classes.link}>
+                        Upload-Problem
                     </a>
-                    <a href="/my/report" className={classes.link}>
-                        My Report
+                    <a href="/my/plan" className={classes.link}>
+                        My Plan
                     </a>
                     <UnstyledButton className={classes.link} onClick={toggleLinks}>
                         <Center inline>

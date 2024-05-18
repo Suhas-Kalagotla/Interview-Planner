@@ -9,7 +9,7 @@ const getReports = async (page: number, limit: number) => {
     return await service.get(`/api/plagiarism/report?page=${page}&limit=${limit}`);
 };
 
-export default function MyReport() {
+export default function MyPlan() {
     const limit = 10;
     const [total, setTotal] = useState(1);
     const [activePage, setPage] = useState(1);

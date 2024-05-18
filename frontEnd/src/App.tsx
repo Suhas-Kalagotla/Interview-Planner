@@ -8,8 +8,8 @@ import LoadingPage from './Components/UtilComponents/LoadingPage';
 const Login = React.lazy(() => import('./Pages/Login'));
 const Home = React.lazy(() => import('./Pages/Home'));
 const User = React.lazy(() => import('./Pages/User'));
-const UploadDoc = React.lazy(() => import('./Pages/UploadDoc'));
-const MyReport = React.lazy(() => import('./Pages/MyReport'));
+const UploadProblem = React.lazy(() => import('./Pages/UploadProblem'));
+const MyPlan = React.lazy(() => import('./Pages/MyPlan'));
 
 function App() {
     return (
@@ -20,8 +20,8 @@ function App() {
                 <Route path="/login" element={  <Suspense fallback={<LoadingPage/>}> <Login /> </Suspense>} />
                     <Route path="/" element={<Suspense fallback={<LoadingPage/>}> <Home /> </Suspense>} />
                     <Route path="/user" element={<Suspense fallback={<LoadingPage/>}> <User /> </Suspense>} />
-                    <Route path="/upload/doc" element={<Suspense fallback={<LoadingPage/>}> <UploadDoc /> </Suspense>} />
-                    <Route path="/my/report" element={<Suspense fallback={<LoadingPage/>}> <MyReport /> </Suspense>} />
+                    <Route path="/upload/problem" element={<Suspense fallback={<LoadingPage/>}> <UploadProblem /> </Suspense>} />
+                    <Route path="/my/plan" element={<Suspense fallback={<LoadingPage/>}> <MyPlan /> </Suspense>} />
                 </Routes>
             </Router>
         </MantineProvider>
