@@ -36,7 +36,6 @@ module.exports.protect = async (req, res, next) => {
 
             // Access token is valid, continue with the protected route
             req.user = { ...decoded, token: accessToken };
-            console.log(req.user)
             return next();
         } catch (err) {
             logger.error("Invalid access token", err);
