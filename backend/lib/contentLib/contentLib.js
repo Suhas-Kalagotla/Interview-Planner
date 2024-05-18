@@ -68,8 +68,6 @@ module.exports.upload_doc = async (req, res) => {
 module.exports.get_report_list = async (req, res) => {
     try {
 
-        console.log(req.user)
-
         const query = { limit: req.query.limit, page: req.query.page };
         const mongo_query = { user : req.user.id }
         const report_list = await requestModal.paginate( mongo_query, query);

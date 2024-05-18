@@ -25,6 +25,8 @@ module.exports.createSendToken = async (
         if (user_role) {
             const token = signToken(user.id, user_role, user.avatar, user.firstName);
 
+            console.log("TOKEN",token);
+
             const cookieOptions = {
                 maxAge: config.jwt_cookie_expires_in,
                 httpOnly: true,

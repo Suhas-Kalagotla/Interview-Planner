@@ -13,7 +13,7 @@ const IMPORTANCE = {
     ten: 10,
 };
 
-var chatSchema = new mongoose.Schema(
+var problemSchema = new mongoose.Schema(
     {
         user: { type: mongoose.Schema.Types.ObjectId, ref: 'muser' },
         name: String,
@@ -27,4 +27,4 @@ var chatSchema = new mongoose.Schema(
     { timestamps: true },
 );
 
-module.exports = mongoose.model('chat', chatSchema);
+module.exports = mongoose.model('problem', problemSchema);
