@@ -78,7 +78,7 @@ export function HeaderMegaMenu() {
         <Box pb={1}>
             <header className={classes.header}>
                 <Group justify="space-between" h="100%">
-                    <Text component='a' href="#" size="xl" fw={800}>
+                    <Text component="a" href="#" size="xl" fw={800}>
                         {' '}
                         PlagiarismCheck
                     </Text>
@@ -91,62 +91,8 @@ export function HeaderMegaMenu() {
                             </a>
                             <a href="/my/plan" className={classes.link}>
                                 My Plan
-                                <IconReportAnalytics/>
+                                <IconReportAnalytics />
                             </a>
-                            <HoverCard
-                                width={600}
-                                position="bottom"
-                                radius="md"
-                                shadow="md"
-                                withinPortal
-                            >
-                                <HoverCard.Target>
-                                    <a href="#" className={classes.link}>
-                                        <Center inline>
-                                            <Box component="span" mr={5}>
-                                                Features
-                                            </Box>
-                                            <IconChevronDown
-                                                style={{
-                                                    width: rem(16),
-                                                    height: rem(16),
-                                                }}
-                                                color={theme.colors.blue[6]}
-                                            />
-                                        </Center>
-                                    </a>
-                                </HoverCard.Target>
-
-                                <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
-                                    <Group justify="space-between" px="md">
-                                        <Text fw={500}>Features</Text>
-                                        <Anchor href="#" fz="xs">
-                                            View all
-                                        </Anchor>
-                                    </Group>
-
-                                    <Divider my="sm" />
-
-                                    <SimpleGrid cols={2} spacing={0}>
-                                        {links}
-                                    </SimpleGrid>
-
-                                    <div className={classes.dropdownFooter}>
-                                        <Group justify="space-between">
-                                            <div>
-                                                <Text fw={500} fz="sm">
-                                                    Get started
-                                                </Text>
-                                                <Text size="xs" c="dimmed">
-                                                    Their food sources have decreased, and their
-                                                    numbers
-                                                </Text>
-                                            </div>
-                                            <Button variant="default">Get started</Button>
-                                        </Group>
-                                    </div>
-                                </HoverCard.Dropdown>
-                            </HoverCard>
                         </Group>
                     )}
 

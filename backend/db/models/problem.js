@@ -15,12 +15,17 @@ const IMPORTANCE = {
 
 var problemSchema = new mongoose.Schema(
     {
-        user: { type: mongoose.Schema.Types.ObjectId, ref: 'muser' },
+        author: { type: mongoose.Schema.Types.ObjectId, ref: 'muser' },
         name: String,
         source: String,
         topic: String,
         importance: { type: Number, required: true, enum: IMPORTANCE, default: IMPORTANCE.one },
-        timeToSolve: String,
+        timeToSolve: {
+            new: Number, // in minutes
+            solved: Number, // in minutes
+            read: Number, // in minutes
+        },
+
         companies: [String],
         rank: Number,
     },
