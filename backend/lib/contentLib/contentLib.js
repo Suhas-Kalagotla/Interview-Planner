@@ -100,7 +100,7 @@ module.exports.get_report_list = async (req, res) => {
 module.exports.get_all_problems = async (req, res) => {
     try {
         const query = { limit: req.query.limit, page: req.query.page };
-
+        console.log(query); 
         const mongo_query = { user: req.user.id };
         const problems_list = await problem.paginate(mongo_query, query);
 

@@ -18,7 +18,13 @@ import {
     useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconChevronDown, IconReportAnalytics, IconSparkles, IconUpload , IconList} from '@tabler/icons-react';
+import {
+    IconChevronDown,
+    IconReportAnalytics,
+    IconSparkles,
+    IconUpload,
+    IconList,
+} from '@tabler/icons-react';
 
 import classes from './HeaderMegaMenu.module.css';
 import { RemoveUser, selectIsAuth } from '../../Redux/UserContext/UserSlice';
@@ -93,21 +99,16 @@ export function HeaderMegaMenu() {
                             <a href="/upload/problem" className={classes.link}>
                                 Upload-Problem
                                 <IconUpload />
-
+                            </a>
                             <a href="/create/plan" className={classes.link}>
                                 Create-Plan
-                                <IconSparkles/>
-
+                                <IconSparkles />
                             </a>
                             <a href="/my/plan" className={classes.link}>
                                 My Plan
                                 <IconReportAnalytics />
                             </a>
-                            <a href="/upload/problem" className={classes.link}>
-                                Upload-Problem
-                                <IconUpload />
-                            </a>
-                         
+
                             <HoverCard
                                 width={600}
                                 position="bottom"
