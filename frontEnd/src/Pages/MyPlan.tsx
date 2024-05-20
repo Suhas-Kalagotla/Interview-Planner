@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Service from '../Components/Service/http';
 import { useQuery } from '@tanstack/react-query';
 import ErrorPage from '../Components/UtilComponents/ErrorPage';
+import { Link } from 'react-router-dom';
 const service = new Service();
 
 const getReports = async (page: number, limit: number) => {
@@ -31,9 +32,17 @@ export default function MyPlan() {
 
     const rows = data?.data?.docs?.map((element: any, index: number) => (
         <Table.Tr key={index}>
-            <Table.Td>{element.language}</Table.Td>
+            
+            <Table.Td>        
+                <Link 
+                to={`/plan/${element._id}`}
+                target="_blank" 
+                rel="noopener noreferrer"
+                >{element.name}
+                
+                </Link>
+</Table.Td>
             <Table.Td>{new Date(element.createdAt).toLocaleString()}</Table.Td>
-            <Table.Td>{element.resultUrl}</Table.Td>
         </Table.Tr>
     ));
 
@@ -47,9 +56,8 @@ export default function MyPlan() {
             <Table horizontalSpacing="xl" verticalSpacing="lg" highlightOnHover={true}>
                 <Table.Thead m="xl">
                     <Table.Tr>
-                        <Table.Th>Language</Table.Th>
+                        <Table.Th>Name</Table.Th>
                         <Table.Th>Created At</Table.Th>
-                        <Table.Th>Result</Table.Th>
                     </Table.Tr>
                 </Table.Thead>
                 <Table.Tbody>{rows}</Table.Tbody>
