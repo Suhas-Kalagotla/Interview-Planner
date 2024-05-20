@@ -1,8 +1,10 @@
 const { runMossPlagiarism } = require('../mossLib/mossController');
 const logger = require('../../utils/logger').getLogger();
-const requestModal = require('../../db/models/request');
+const planModal = require('../../db/models/plan');
+const problemModel = require('../../db/models/problem');
+const contentModal = require('../../db/models/content');
 const { mongo } = require('mongoose');
-const problem = require('../../db/models/problem');
+
 /**
  * Uploads documents for plagiarism checking using MOSS (Measure of Software Similarity).
  * @param {object} req - The request object.
@@ -54,14 +56,38 @@ module.exports.upload_doc = async (req, res) => {
     }
 };
 
+
+module.exports.generate_plan = async (req, res) => {
+     // Extracting list of code snippets from request body
+
+     console.log(req.body);
+
+
+     let data = await problemModel.find();
+
+     const newPlan = new planModal({
+        name : req.body.planName,
+        data,
+        duration : req.body.duration,
+        numberOfDays : req.body.numberOfDays,
+        companies : req.body.companies,
+        user : req.user.id,
+     })
+
+     let savePlan = await newPlan.save();
+
+     res.status(201).json({ message: 'Content saved successfully' , savePlan});
+}
+
+
 module.exports.get_report_list = async (req, res) => {
     try {
-        const query = { limit: req.query.limit, page: req.query.page };
-        const mongo_query = { user: req.user.id };
-        console.log(query, mongo_query);
-        const report_list = await requestModal.paginate(mongo_query, query);
 
-        res.status(200).json({ message: 'result', data: report_list });
+        const query = { limit: req.query.limit, page: req.query.page };
+        const mongo_query = { user : req.user.id }
+        const report_list = await planModal.paginate( mongo_query, query);
+
+        res.status(200).json({ message: "result", data : report_list});
     } catch (error) {
         // Handling errors
         console.error('Error saving content:', error);
@@ -69,6 +95,7 @@ module.exports.get_report_list = async (req, res) => {
         res.status(500).json({ message: 'Internal server error' });
     }
 };
+
 
 module.exports.get_all_problems = async (req, res) => {
     try {
@@ -84,3 +111,17 @@ module.exports.get_all_problems = async (req, res) => {
         res.status(500).json({ message: 'Internal server error' });
     }
 };
+
+
+module.exports.get_plan = async (req, res) => {
+    try {
+
+        const plan = await planModal.findById(req.params.id);
+
+        res.status(200).json({ message: "result", data : plan});
+    } catch (error) {
+        logger.error('Error fetching content:', error); // Logging error
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};
+

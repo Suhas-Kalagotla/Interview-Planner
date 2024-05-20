@@ -19,23 +19,16 @@ import classes from './FeaturesGrid.module.css';
 export const MOCKDATA = [
     {
         icon: IconCode,
-        title: 'Upload and Check',
-        link: '/upload/doc',
+        title: 'Create plan',
+        link: '/create/plan',
         description:
             'Upload your CPP, Java, Python, Node.js, and more files for plagiarism detection.',
     },
     {
         icon: IconCoin,
-        title: 'Free for Everyone',
-        link: '#',
+        title: 'My Plan',
+        link: 'my/plan',
         description: 'Plagiarism detection service is free for all users.',
-    },
-    {
-        icon: IconBook,
-        title: 'Comprehensive Analysis',
-        link: '#',
-        description:
-            'Receive detailed reports on similarities and originality of your code.',
     },
     {
         icon: IconFingerprint,
@@ -49,14 +42,7 @@ export const MOCKDATA = [
         link: '#',
         description:
             'Gain insights into code similarity trends across different programming languages.',
-    },
-    {
-        icon: IconNotification,
-        title: 'Instant Notifications',
-        link: '#',
-        description:
-            'Get notified instantly upon completion of plagiarism checks.',
-    },
+    }
 ];
 
 interface FeatureProps {
@@ -95,7 +81,7 @@ export function FeaturesGrid() {
     return (
         <Container className={classes.wrapper}>
             <Title  className={classes.title}>
-                User-Friendly UI for Plagiarism Detection
+                Interview Planner
             </Title>
 
             <Container size={560} p={0}>
