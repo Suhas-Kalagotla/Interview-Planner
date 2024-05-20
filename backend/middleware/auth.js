@@ -26,7 +26,7 @@ module.exports.protect = async (req, res, next) => {
             // Verify and decode the access token
             const decoded = jwt.verify(accessToken, config.jwt_secret, { ignoreExpiration: true });
 
-            logger.info("Decoded token", decoded);
+            logger.debug("Decoded token", decoded);
 
             // Check if access token has expired
             if (decoded.exp < Date.now() / 1000) {

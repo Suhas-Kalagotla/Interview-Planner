@@ -18,7 +18,7 @@ import {
     useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconChevronDown, IconReportAnalytics, IconUpload } from '@tabler/icons-react';
+import { IconChevronDown, IconReportAnalytics, IconSparkles, IconUpload } from '@tabler/icons-react';
 import classes from './HeaderMegaMenu.module.css';
 import { RemoveUser, selectIsAuth } from '../../Redux/UserContext/UserSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -80,19 +80,78 @@ export function HeaderMegaMenu() {
                 <Group justify="space-between" h="100%">
                     <Text component="a" href="#" size="xl" fw={800}>
                         {' '}
-                        PlagiarismCheck
+                        Interview Planner
                     </Text>
 
                     {isAuth && (
                         <Group h="100%" gap={0} visibleFrom="sm">
-                            <a href="/upload/problem" className={classes.link}>
-                                Upload-Problem
-                                <IconUpload />
+                            <a href="/create/plan" className={classes.link}>
+                                Create-Plan
+                                <IconSparkles/>
                             </a>
                             <a href="/my/plan" className={classes.link}>
                                 My Plan
                                 <IconReportAnalytics />
                             </a>
+                            <a href="/upload/problem" className={classes.link}>
+                                Upload-Problem
+                                <IconUpload />
+                            </a>
+                         
+                            <HoverCard
+                                width={600}
+                                position="bottom"
+                                radius="md"
+                                shadow="md"
+                                withinPortal
+                            >
+                                <HoverCard.Target>
+                                    <a href="#" className={classes.link}>
+                                        <Center inline>
+                                            <Box component="span" mr={5}>
+                                                Features
+                                            </Box>
+                                            <IconChevronDown
+                                                style={{
+                                                    width: rem(16),
+                                                    height: rem(16),
+                                                }}
+                                                color={theme.colors.blue[6]}
+                                            />
+                                        </Center>
+                                    </a>
+                                </HoverCard.Target>
+
+                                <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
+                                    <Group justify="space-between" px="md">
+                                        <Text fw={500}>Features</Text>
+                                        <Anchor href="#" fz="xs">
+                                            View all
+                                        </Anchor>
+                                    </Group>
+
+                                    <Divider my="sm" />
+
+                                    <SimpleGrid cols={2} spacing={0}>
+                                        {links}
+                                    </SimpleGrid>
+
+                                    <div className={classes.dropdownFooter}>
+                                        <Group justify="space-between">
+                                            <div>
+                                                <Text fw={500} fz="sm">
+                                                    Get started
+                                                </Text>
+                                                <Text size="xs" c="dimmed">
+                                                    Their food sources have decreased, and their
+                                                    numbers
+                                                </Text>
+                                            </div>
+                                            <Button variant="default">Get started</Button>
+                                        </Group>
+                                    </div>
+                                </HoverCard.Dropdown>
+                            </HoverCard>
                         </Group>
                     )}
 

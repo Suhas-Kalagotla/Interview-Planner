@@ -24,7 +24,6 @@ import LoadingPage from '../Components/UtilComponents/LoadingPage';
 import ErrorPage from '../Components/UtilComponents/ErrorPage';
 import { Link } from 'react-router-dom';
 import { SUPPORTED_LANGUAGES } from '../Utils/Constant';
-
 const service = new Service();
 
 const uploadDataPlagiarism = async (data: any) => {
@@ -91,7 +90,6 @@ const UploadProblem = () => {
     }
 
     const form = useForm({
-        mode: 'uncontrolled',
         initialValues: {
             name: '',
             topic: '',
