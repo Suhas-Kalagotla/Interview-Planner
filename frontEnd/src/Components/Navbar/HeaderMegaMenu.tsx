@@ -18,7 +18,8 @@ import {
     useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconChevronDown, IconReportAnalytics, IconSparkles, IconUpload } from '@tabler/icons-react';
+import { IconChevronDown, IconReportAnalytics, IconSparkles, IconUpload , IconList} from '@tabler/icons-react';
+
 import classes from './HeaderMegaMenu.module.css';
 import { RemoveUser, selectIsAuth } from '../../Redux/UserContext/UserSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -85,9 +86,18 @@ export function HeaderMegaMenu() {
 
                     {isAuth && (
                         <Group h="100%" gap={0} visibleFrom="sm">
+                            <a href="/problems" className={classes.link}>
+                                Problem-list
+                                <IconList />
+                            </a>
+                            <a href="/upload/problem" className={classes.link}>
+                                Upload-Problem
+                                <IconUpload />
+
                             <a href="/create/plan" className={classes.link}>
                                 Create-Plan
                                 <IconSparkles/>
+
                             </a>
                             <a href="/my/plan" className={classes.link}>
                                 My Plan
@@ -184,6 +194,9 @@ export function HeaderMegaMenu() {
 
                     <a href="#" className={classes.link}>
                         Home
+                    </a>
+                    <a href="/problems" className={classes.link}>
+                        Problem-list
                     </a>
                     <a href="/upload/problem" className={classes.link}>
                         Upload-Problem
