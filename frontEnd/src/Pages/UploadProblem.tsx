@@ -11,10 +11,11 @@ import {
     Center,
     Stack,
     Button,
+    CheckIcon,
 } from '@mantine/core';
 import { NativeSelect } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { IconDownload, IconFileCv, IconPoint } from '@tabler/icons-react';
+import { IconDownload, IconFileCv, IconPoint, IconCheck } from '@tabler/icons-react';
 import { useState } from 'react';
 import Service from '../Components/Service/http';
 import * as XLSX from 'xlsx';
@@ -36,6 +37,7 @@ const UploadProblem = () => {
     const [responseData, setResponseData] = useState(null);
     const [language, setLanguage] = useState<any>(SUPPORTED_LANGUAGES[0]);
     const icon = <IconFileCv style={{ width: rem(19), height: rem(18) }} stroke={1.5} />;
+    const checkIcon = <IconCheck style={{ width: rem(20), height: rem(20) }} />;
 
     const handleFileUpload = async (file: File | null) => {
         if (file) {
@@ -118,6 +120,14 @@ const UploadProblem = () => {
         try {
             const data = await uploadDataPlagiarism(values);
             console.log(data);
+            if (data.status == 'success') {
+                showNotification({
+                    title: 'Success',
+                    message: 'Question created successfully',
+                    color: 'green',
+                    icon:<CheckIcon/>
+                });
+            }
         } catch (error) {
             console.error('Error uploading data :', error);
         }

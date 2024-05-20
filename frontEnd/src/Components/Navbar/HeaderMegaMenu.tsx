@@ -85,6 +85,9 @@ export function HeaderMegaMenu() {
 
                     {isAuth && (
                         <Group h="100%" gap={0} visibleFrom="sm">
+                            <a href="/problems" className={classes.link}>
+                                Problem-list
+                            </a>
                             <a href="/upload/problem" className={classes.link}>
                                 Upload-Problem
                                 <IconUpload />
@@ -125,6 +128,9 @@ export function HeaderMegaMenu() {
 
                     <a href="#" className={classes.link}>
                         Home
+                    </a>
+                    <a href="/problems" className={classes.link}>
+                        Problem-list
                     </a>
                     <a href="/upload/problem" className={classes.link}>
                         Upload-Problem
